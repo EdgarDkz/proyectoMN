@@ -1,4 +1,30 @@
 <div id="container">
-  <strong>{{ name }}</strong>
-  <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+ 
+  <ion-title> Selecciona un nivel</ion-title>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-button (click)="nivel1()">
+          <ion-icon slot="start" name="add"></ion-icon>
+         Nivel 1 - Interpolación
+        </ion-button>
+        <ion-button (click)="nivel2()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Nivel 2 - Solución de Ecuaciones no Lineales / lineales
+        </ion-button>
+        <ion-button (click)="nivel3()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Nivel 3 - Minimos cuadrados
+            </ion-button>
+        <ion-button (click)="nivel4()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Nivel 4 - Integración
+        </ion-button>
+        <ion-button (click)="nivel5()">
+          <ion-icon slot="start" name="add"></ion-icon>
+          Nivel 5 - Ecuaciones diferenciales ordinarias
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+
 </div>

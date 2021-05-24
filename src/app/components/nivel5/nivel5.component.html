@@ -1,0 +1,392 @@
+<ion-header>
+  <ion-toolbar>
+   <ion-buttons slot="end">
+     <ion-button>
+       <ion-icon color="warning" slot="start" name="logo-bitcoin"></ion-icon>
+      <ion-text color="warning">
+          Monedas({{monedas+total}})
+      </ion-text>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <ion-text color="primary">
+        <p> Tiempo Restante: <b>{{timeLeft}}</b> </p>
+      </ion-text>
+     </ion-button>
+   </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  *ngIf="timeLeft>0">
+
+   <ion-card *ngIf="mostrarN1P1">
+     <ion-card-header>
+       <ion-card-subtitle>Pregunta 1</ion-card-subtitle>
+     </ion-card-header>
+     <ion-card-content>
+
+     <ion-img src="assets/img/N5P1.PNG"></ion-img>
+
+
+      <ion-buttons slot="start">
+        <ion-button (click)="buttonColor1='danger'; total=total-1; mostrarN1R1=true;" [hidden]="ocultarp1" [color]="buttonColor1">
+        1.-  y2= 2.394939394
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="buttonColor2='success';  total=total+1;  mostrarN1R1=true;" [color]="buttonColor2">
+          2.- y2= 1.995555556
+        </ion-button>
+      </ion-buttons> 
+      <ion-buttons  slot="start">
+        <ion-button  (click)="buttonColor3='danger';  total=total-1; mostrarN1R1=true;"  [color]="buttonColor3">
+          3.- y2= 1.384819234
+        </ion-button>
+      </ion-buttons> 
+      <ion-buttons slot="start">
+        <ion-button  (click)="buttonColor4='danger';  total=total-1; mostrarN1R1=true;"  [hidden]="ocultarp1" [color]="buttonColor4">
+          4.- y2= 3.102304212
+        </ion-button>
+      </ion-buttons> 
+
+      <div>
+        <ion-buttons slot="start">
+          <ion-button >
+            <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+            Selecciona la respuesta correcta
+          </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="start">
+          <ion-button (click)="ocultarp1=true">
+            <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+            Eliminar 2 incorrectas
+          </ion-button>
+        </ion-buttons>
+
+        <ion-buttons slot="start">
+          <ion-button (click)="mostrarN1R1=true;">
+            <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+            Saltar Pregunta <small>(incorrecta)</small>
+          </ion-button>
+        </ion-buttons>
+      </div>
+     </ion-card-content>
+
+   </ion-card>
+
+
+<ion-card *ngIf="mostrarN1R1">
+  <ion-card-content>
+    <ion-img src="assets/img/N5R1.PNG"></ion-img>
+   </ion-card-content>
+   
+  <div>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarN1R1=false; mostrarN1P2=true;">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Siguiente Pregunta
+      </ion-button>
+    </ion-buttons>
+  </div>
+ 
+</ion-card>
+
+
+   <ion-card *ngIf="mostrarN1P2">
+    <ion-card-header>
+      <ion-card-subtitle>Pregunta 2</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+
+      <ion-img src="assets/img/N5P2.PNG"></ion-img>
+
+     <ion-buttons slot="start">
+       <ion-button (click)="buttonColor5='danger';  total=total-1; mostrarN1R2=true;" [hidden]="ocultarp2" [color]="buttonColor5">
+        1.- y1= 0.401284234
+       </ion-button>
+     </ion-buttons>
+
+     <ion-buttons slot="start">
+       <ion-button (click)="buttonColor6='danger';  total=total-1; mostrarN1R2=true;" [color]="buttonColor6">
+        2.- y1= 0.981243984
+       </ion-button>
+     </ion-buttons> 
+     <ion-buttons  slot="start">
+       <ion-button  (click)="buttonColor7='danger';  total=total-1; mostrarN1R2=true;"  [hidden]="ocultarp2"    [color]="buttonColor7">
+        3.- y1= 0.127312341
+       </ion-button>
+     </ion-buttons> 
+     <ion-buttons slot="start">
+       <ion-button  (click)="buttonColor8='success';  total=total+1; mostrarN1R2=true;"  [color]="buttonColor8">
+        4.- y1= 0.651632664
+       </ion-button>
+     </ion-buttons> 
+    
+    </ion-card-content>
+    <div>
+      <ion-buttons slot="start">
+        <ion-button>
+          <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+          Selecciona la respuesta correcta
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="ocultarp2=true">
+          <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+          Eliminar 2 incorrectas
+        </ion-button>
+      </ion-buttons>
+
+      <ion-buttons slot="start">
+        <ion-button (click)="mostrarN1R2=true;">
+          <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+          Saltar Pregunta <small>(incorrecta)</small>
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </ion-card>
+
+
+<ion-card *ngIf="mostrarN1R2">
+  <ion-card-content>
+    <ion-img src="assets/img/N5R2.PNG"></ion-img>
+   </ion-card-content>
+  <div>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarN1R2=false; mostrarN1P3=true;">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Siguiente Pregunta
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-card>
+
+<ion-card *ngIf="mostrarN1P3">
+  <ion-card-header>
+    <ion-card-subtitle>Pregunta 3</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-img src="assets/img/N5P3.PNG"></ion-img>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor9='danger';  total=total-1; mostrarN1R3=true;" [hidden]="ocultarp3" [color]="buttonColor9">
+      1.- y1 =3.231475234
+     </ion-button>
+   </ion-buttons>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor10='danger';  total=total-1; mostrarN1R3=true;" [hidden]="ocultarp3" [color]="buttonColor10" [color]="buttonColor10">
+      2.- y1 =2.203497532
+     </ion-button>
+   </ion-buttons> 
+
+   <ion-buttons slot="start">
+    <ion-button  (click)="buttonColor11='success';  total=total+1; mostrarN1R3=true;"  [color]="buttonColor11">
+      3.- y1 =1.211723276
+     </ion-button>
+  </ion-buttons> 
+
+  <ion-buttons slot="start">
+    <ion-button  (click)="buttonColor12='danger';  total=total-1; mostrarN1R3=true;" [color]="buttonColor12">
+      4.- y1 =1.911721294
+     </ion-button>
+  </ion-buttons> 
+  
+  </ion-card-content>
+  <div>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Selecciona la respuesta correcta
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="ocultarp3=true">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Eliminar 2 incorrectas
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarN1R3=true;">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Saltar Pregunta <small>(incorrecta)</small>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-card>
+
+
+<ion-card *ngIf="mostrarN1R3">
+<ion-card-content>
+  <ion-img src="assets/img/N5R3.PNG"></ion-img>
+ </ion-card-content>
+<div>
+  <ion-buttons slot="start">
+    <ion-button (click)="mostrarN1R3=false; mostrarN1P4=true;">
+      <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+      Siguiente Pregunta
+    </ion-button>
+  </ion-buttons>
+</div>
+</ion-card>
+
+
+<ion-card *ngIf="mostrarN1P4">
+  <ion-card-header>
+    <ion-card-subtitle>Pregunta 4</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-img src="assets/img/N5P4.PNG"></ion-img>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor13='danger';  total=total-1; mostrarN1R4=true;" [hidden]="ocultarp4" [color]="buttonColor13">
+      1.- y1=0.912784871 
+     </ion-button>
+   </ion-buttons>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor14='success';  total=total+1; mostrarN1R4=true;"  [color]="buttonColor14">
+      2.- y1=0.511617621
+     </ion-button>
+   </ion-buttons> 
+   <ion-buttons  slot="start">
+     <ion-button  (click)="buttonColor15='danger';  total=total-1; mostrarN1R4=true;" [hidden]="ocultarp4" [color]="buttonColor15">
+      3.- y1=0.812304919
+     </ion-button>
+   </ion-buttons> 
+   <ion-buttons slot="start">
+     <ion-button  (click)="buttonColor16='danger';  total=total-1; mostrarN1R4=true;"   [color]="buttonColor16">
+      4.- y1=0.201241208
+      
+     </ion-button>
+   </ion-buttons> 
+  
+  </ion-card-content>
+  <div>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Selecciona la respuesta correcta
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="ocultarp4=true">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Eliminar 2 incorrectas
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarN1R4=true;">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Saltar Pregunta <small>(incorrecta)</small>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-card>
+
+
+<ion-card *ngIf="mostrarN1R4">
+<ion-card-content>
+  <ion-img src="assets/img/N5R4.PNG"></ion-img>
+ </ion-card-content>
+<div>
+  <ion-buttons slot="start">
+    <ion-button (click)="mostrarN1R4=false; mostrarN1P5=true;">
+      <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+      Siguiente Pregunta
+    </ion-button>
+  </ion-buttons>
+</div>
+</ion-card>
+
+
+
+<ion-card *ngIf="mostrarN1P5">
+  <ion-card-header>
+    <ion-card-subtitle>Pregunta 5</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+
+    <ion-img src="assets/img/N2P5.PNG"></ion-img>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor17='danger'; total=total-1; mostrarN1R5=true;" [hidden]="ocultarp5"   [color]="buttonColor17">
+      1.- y1= 1.718 y ́1= 0.8120
+     </ion-button>
+   </ion-buttons>
+
+   <ion-buttons slot="start">
+     <ion-button (click)="buttonColor18='danger'; total=total-1; mostrarN1R5=true;" [color]="buttonColor18">
+      2.- y1= 1.823 y ́1= 0.9123
+     </ion-button>
+   </ion-buttons> 
+   <ion-buttons  slot="start">
+     <ion-button  (click)="buttonColor19='danger'; total=total-1; mostrarN1R5=true;" [hidden]="ocultarp5"  [color]="buttonColor19">
+      3.- y1= 1.124 y ́1= 0.7921
+     </ion-button>
+   </ion-buttons> 
+   <ion-buttons slot="start">
+     <ion-button  (click)="buttonColor20='success'; total=total+1; mostrarN1R5=true;"  [color]="buttonColor20">
+      4.- y1= 1.318 y ́1= 0.9952
+      
+     </ion-button>
+   </ion-buttons> 
+
+  </ion-card-content>
+  <div>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Selecciona la respuesta correcta
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="ocultarp5=true">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Eliminar 2 incorrectas
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarN1R5=true;">
+        <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+        Saltar Pregunta <small>(incorrecta)</small>
+      </ion-button>
+    </ion-buttons>
+  </div>
+</ion-card>
+
+
+<ion-card *ngIf="mostrarN1R5">
+<ion-card-content>
+  <ion-img src="assets/img/N1R4.PNG"></ion-img>
+ </ion-card-content>
+<div>
+  <ion-buttons slot="start">
+    <ion-button (click)="mostrarN1R3=false; mostrarN1P4=true;">
+      <ion-icon slot="start" name="caret-forward-outline"></ion-icon>
+      Siguiente Pregunta
+    </ion-button>
+  </ion-buttons>
+</div>
+</ion-card>
+
+
+ </ion-content>
+
+ <ion-content *ngIf="timeLeft===0">
+  <ion-card class="ion-align-items-center">
+   <ion-card-content>
+     <ion-text color="warning">
+       <H1>JUEGO TERMINADO</H1>
+      </ion-text>
+   </ion-card-content>
+  </ion-card>
+</ion-content>
